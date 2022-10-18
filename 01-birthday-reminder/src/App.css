@@ -1,0 +1,28 @@
+.App {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--clr-white);
+  width: 450px;
+  margin: 5rem 0;
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--dark-shadow);
+}
+
+.card button {
+  width: 100%;
+  background-color: var(--clr-pink);
+  margin: 1rem auto 0 auto;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--clr-white);
+  border-color: transparent;
+  cursor: pointer;
+  outline: 1px solid rgba(242, 138, 178, 0.8);
+  border-radius: var(--radius);
+}
