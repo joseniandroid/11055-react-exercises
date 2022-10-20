@@ -17,7 +17,7 @@ function App() {
 
       // Once data are available, setLoading to false
       setLoading(false);
-      setTours([]);
+      setTours(tours);
     } catch (error) {
       setLoading(false);
       console.error(error);
@@ -48,7 +48,7 @@ function App() {
 
   return (
     <main>
-      <h2>Tours Project Setup</h2>
+      <Tours tours={tours} />
     </main>
   );
 }
