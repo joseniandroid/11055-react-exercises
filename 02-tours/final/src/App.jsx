@@ -17,7 +17,7 @@ function App() {
 
       // Once data are available, setLoading to false
       setLoading(false);
-      setTours(tours);
+      setTours([]);
     } catch (error) {
       setLoading(false);
       console.error(error);
@@ -32,6 +32,16 @@ function App() {
     return (
       <main>
         <Loading />
+      </main>
+    );
+  }
+  if (tours.length === 0) {
+    return (
+      <main>
+        <div className="title">
+          <h2>No tours left</h2>
+          <button className='btn' onClick={() => fetchTours()}>Refresh</button>
+        </div>
       </main>
     );
   }
