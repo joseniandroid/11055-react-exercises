@@ -12,3 +12,4 @@
 3. Reviews
 4. Accordion (Questions)
 5. Tabs (Experiences)
+6. Menu
