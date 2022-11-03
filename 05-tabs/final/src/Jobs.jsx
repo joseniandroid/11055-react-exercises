@@ -8,9 +8,13 @@ const Jobs = ({ jobs }) => {
     <div className="jobs-center">
       {/* btn container */}
       <div className="btn-container">
-        {jobs.map((item) => {
+        {jobs.map((item, index) => {
           return (
-            <button key={item.id} className="job-btn">
+            <button
+              key={item.id}
+              className={`job-btn ${index === jobIndex && 'active-btn'}`}
+              onClick={() => setJobIndex(index)}
+            >
               {item.company}
             </button>
           );
