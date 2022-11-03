@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Loading from "./Loading";
+import Jobs from "./Jobs";
 
 const url = "https://course-api.com/react-tabs-project";
 
@@ -29,9 +30,7 @@ function App() {
         <h2>experience</h2>
         <div className="underline"></div>
       </div>
-      <div className="jobs-center">
-        {/* TODO: Create a component to host all the jobs information */}
-      </div>
+      <Jobs jobs={jobs} />
       <button type="button" className="btn">
         more info
       </button>
