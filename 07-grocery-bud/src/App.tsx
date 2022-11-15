@@ -15,6 +15,15 @@ function App() {
     e.preventDefault();
     const newItemTitle = itemName;
 
+    if (!newItemTitle) {
+      showAlert({
+        show: true,
+        message: 'Please enter item to add to basket',
+        type: 'error',
+      });
+      return;
+    }
+
     setBasket([
       ...basket,
       {
