@@ -1,31 +1,51 @@
+import { Alert, BasketItem } from './types';
+import { Basket, Toast } from './components';
 import { FormEvent, useState } from 'react';
-
-import { Basket } from './components';
-import { BasketItem } from './types';
 
 function App() {
   const [itemName, setItemName] = useState('');
   const [basket, setBasket] = useState<BasketItem[]>([]);
+  const [alert, setAlert] = useState<Alert>({
+    show: false,
+    message: '',
+    type: 'error',
+  });
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    const newItemTitle = itemName;
 
     setBasket([
       ...basket,
       {
-        title: itemName,
+        title: newItemTitle,
       },
     ]);
     setItemName('');
+    showAlert({
+      show: true,
+      message: `'${newItemTitle}' added to the basket`,
+      type: 'success',
+    });
   };
 
   const clearBasket = () => {
     setBasket([]);
   };
 
+  const showAlert = (alert?: Alert) => {
+    if (alert) {
+      setAlert({ ...alert });
+    } else {
+      setAlert({ show: false });
+    }
+  };
+
   return (
     <section className='section-center'>
       <form action='' className='grocery-form' onSubmit={handleSubmit}>
+        {alert.show && <Toast {...alert} removeAlert={showAlert} />}
+
         <h3>grocery bud</h3>
         <div className='form-control'>
           <input
