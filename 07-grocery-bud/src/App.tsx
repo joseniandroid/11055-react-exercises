@@ -93,6 +93,21 @@ function App() {
     setItemName(itemToEdit.title);
   };
 
+  const removeItem = (id: string) => {
+    const itemToDelete = basket.find((item) => item.id === id);
+    if (!itemToDelete) {
+      return;
+    }
+
+    const updatedBasket = basket.filter((item) => item.id !== id);
+    setBasket(updatedBasket);
+    showAlert({
+      show: true,
+      message: `'${itemToDelete.title}' removed from the basket`,
+      type: 'error',
+    });
+  };
+
   return (
     <section className='section-center'>
       <form action='' className='grocery-form' onSubmit={handleSubmit}>
@@ -115,7 +130,7 @@ function App() {
 
       {basket.length > 0 && (
         <div className='grocery-container'>
-          <Basket items={basket} editItem={editItem} />
+          <Basket items={basket} editItem={editItem} removeItem={removeItem} />
           <button className='clear-btn' onClick={clearBasket}>
             clear items
           </button>
