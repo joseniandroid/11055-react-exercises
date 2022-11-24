@@ -1,5 +1,5 @@
 import { Contact, Home, NotFound } from './pages';
-import { Link, Route, Routes, useRoutes } from 'react-router-dom';
+import { Link, NavLink, Route, Routes, useRoutes } from 'react-router-dom';
 
 import { BookRoutes } from './routes';
 
@@ -32,15 +32,15 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to='/' reloadDocument>
+            <NavLink to='/' reloadDocument>
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to='/books'>Books</Link>
+            <NavLink to='/books'>Books</NavLink>
           </li>
           <li>
-            <Link to='/contact'>Contact</Link>
+            <NavLink to='/contact'>Contact</NavLink>
           </li>
         </ul>
       </nav>
