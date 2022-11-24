@@ -9,6 +9,8 @@ export const BookList = () => {
       <Link to='/books/2'>Book 2</Link>
       <span> | </span>
       <Link to='/books/3'>Book 3</Link>
+      <span> | </span>
+      <Link to='/books/new'>+ New</Link>
     </>
   );
 };
