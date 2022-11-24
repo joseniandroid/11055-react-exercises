@@ -12,7 +12,11 @@ export const BooksLayout = () => {
       <span> | </span>
       <Link to='/books/new'>+ New</Link>
 
-      <Outlet />
+      <Outlet
+        context={{
+          hello: 'universe',
+        }}
+      />
     </>
   );
 };
