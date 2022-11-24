@@ -1,7 +1,7 @@
-import { Book, BookList, Contact, Home, NewBook, NotFound } from './pages';
+import { Contact, Home, NotFound } from './pages';
 import { Link, Route, Routes } from 'react-router-dom';
 
-import { BooksLayout } from './layouts';
+import { BookRoutes } from './routes';
 
 function App() {
   return (
@@ -27,11 +27,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/books' element={<BooksLayout />}>
-          <Route index element={<BookList />} />
-          <Route path=':id' element={<Book />} />
-          <Route path='new' element={<NewBook />} />
-        </Route>
+        <Route path='/books/*' element={<BookRoutes />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>
