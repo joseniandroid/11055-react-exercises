@@ -6,6 +6,10 @@ import { BooksLayout } from './layouts';
 function App() {
   return (
     <>
+      <Routes>
+        <Route path='/books' element={<h1>Extra Content for /books</h1>} />
+      </Routes>
+
       <nav>
         <ul>
           <li>
