@@ -1,6 +1,8 @@
 import { Book, BookList, Contact, Home, NewBook, NotFound } from './pages';
 import { Link, Route, Routes } from 'react-router-dom';
 
+import { BooksLayout } from './layouts';
+
 function App() {
   return (
     <>
@@ -21,7 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/books'>
+        <Route path='/books' element={<BooksLayout />}>
           <Route index element={<BookList />} />
           <Route path=':id' element={<Book />} />
           <Route path='new' element={<NewBook />} />
