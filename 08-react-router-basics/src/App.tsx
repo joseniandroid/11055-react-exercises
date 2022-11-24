@@ -32,7 +32,7 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to='/' replace>
+            <Link to='/' reloadDocument>
               Home
             </Link>
           </li>
