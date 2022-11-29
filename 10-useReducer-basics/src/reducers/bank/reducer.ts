@@ -10,6 +10,12 @@ export const bankReducer = (state: BankState, action: BankAction) => {
         coins: state.coins + action.payload,
       };
 
+    case BankActionType.WITHDRAW:
+      return {
+        ...state,
+        coins: state.coins - action.payload,
+      };
+
     default:
       return state;
   }

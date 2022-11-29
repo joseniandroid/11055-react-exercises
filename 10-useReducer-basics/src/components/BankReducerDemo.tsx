@@ -13,13 +13,21 @@ export const BankReducerDemo = () => {
     dispatch(depositAction);
   };
 
+  const handleWithdraw = () => {
+    const withdrawAction = {
+      type: BankActionType.WITHDRAW,
+      payload: 10,
+    };
+    dispatch(withdrawAction);
+  };
+
   return (
     <>
       <h3>BankReducerDemo</h3>
 
       <h2>coins: {state.coins}</h2>
 
-      <button>Withdraw</button>
+      <button onClick={handleWithdraw}>Withdraw</button>
       <span style={{ marginLeft: '1rem' }}></span>
       <button onClick={handleDeposit}>Deposit</button>
     </>
