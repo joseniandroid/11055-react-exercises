@@ -22,3 +22,7 @@
 ## useContext Hook
 
 9. useContext Basics
+
+## useReducer Hook
+
+10. useReducer Basics
