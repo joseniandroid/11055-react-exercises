@@ -1,25 +1,9 @@
-import { BankActionType, bankReducer } from '../reducers/bank';
+import { bankReducer, deposit, withdraw } from '../reducers/bank';
 
 import { useReducer } from 'react';
 
 export const BankReducerDemo = () => {
   const [state, dispatch] = useReducer(bankReducer, { coins: 500 });
-
-  const handleDeposit = () => {
-    const depositAction = {
-      type: BankActionType.DEPOSIT,
-      payload: 100,
-    };
-    dispatch(depositAction);
-  };
-
-  const handleWithdraw = () => {
-    const withdrawAction = {
-      type: BankActionType.WITHDRAW,
-      payload: 10,
-    };
-    dispatch(withdrawAction);
-  };
 
   return (
     <>
@@ -27,9 +11,9 @@ export const BankReducerDemo = () => {
 
       <h2>coins: {state.coins}</h2>
 
-      <button onClick={handleWithdraw}>Withdraw</button>
+      <button onClick={() => dispatch(withdraw(10))}>Withdraw</button>
       <span style={{ marginLeft: '1rem' }}></span>
-      <button onClick={handleDeposit}>Deposit</button>
+      <button onClick={() => dispatch(deposit(100))}>Deposit</button>
     </>
   );
 };
