@@ -6,7 +6,7 @@ export const Parent = () => {
 
   return (
     <>
-      <Child1 counter={counter} />
+      <Child1 />
       <h1>{counter}</h1>
       <button onClick={() => setCounter(counter + 1)}>Increment</button>
     </>
