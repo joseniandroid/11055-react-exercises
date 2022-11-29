@@ -3,7 +3,7 @@ import styles from './Child.module.css';
 import { useContext } from 'react';
 
 export const Child5 = () => {
-  const counter = useContext(CounterContext);
+  const { counter } = useContext(CounterContext);
 
   return (
     <div className={styles.childBox5}>

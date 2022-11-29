@@ -1,3 +1,9 @@
 import { createContext } from 'react';
 
-export const CounterContext = createContext(0);
+export const initialState = {
+  counter: 0,
+  hello: 'world',
+  fruits: ['apple', 'banana', 'orange'],
+};
+
+export const CounterContext = createContext(initialState);
