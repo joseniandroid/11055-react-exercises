@@ -1,11 +1,15 @@
 import './App.css';
 
 import { Parent } from './components';
+import { TriValueContext } from './contexts';
+import { useContext } from 'react';
 
 function App() {
+  const { stringProp } = useContext(TriValueContext);
+
   return (
     <>
-      <h2>useContext Basics</h2>
+      <h2>{stringProp}</h2>
       <Parent />
     </>
   );
